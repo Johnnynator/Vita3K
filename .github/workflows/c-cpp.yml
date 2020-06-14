@@ -66,8 +66,8 @@ jobs:
         if: matrix.os == 'windows-latest'
 
       - name: CMake configure
-        run: "C:/Program\ Files\ (x86)/Microsoft\ Visual\ Studio/2019/Enterprise/VC/Auxiliary/Build/vcvars64.bat"
-        shell: cmd
+        run: |
+          "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
         if: matrix.os == 'windows-latest'
       - run: cmake -B build -G Ninja -DCI=ON -DCMAKE_BUILD_TYPE=${{ matrix.config }}
 
